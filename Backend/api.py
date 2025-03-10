@@ -26,12 +26,12 @@ app = Flask(__name__)
 UPLOAD_DIR = "Backend/uploads"
 
 # Get Pinecone API Key
-api = os.getenv('PC_API')
+api = os.getenv('pinecone_api')
 
 # Setting the params for the llama-index
 Settings.transformations = [SentenceSplitter(chunk_size=1024, chunk_overlap=512)]
 Settings.embed_model = FastEmbedEmbedding(model_name="BAAI/bge-small-en-v1.5")
-Settings.llm = Ollama(model="llama3.2:latest", request_timeout=600)
+Settings.llm = Ollama(model="phi3:latest", request_timeout=600)
 
 # Initilize a chategine to change and use it globally
 chat_engine = None                          # chat engine to use it globally

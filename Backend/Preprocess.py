@@ -14,7 +14,7 @@ import os
 load_dotenv()
 
 # Get Pinecone API Key
-api = os.getenv('PC_API')
+api = os.getenv('pinecone_api')
 
 
 def get_nodes(folder_path):
